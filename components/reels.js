@@ -1,4 +1,5 @@
 import { ChevronRight, Clapperboard, Play } from "lucide-react";
+import ReelsDebug from "@/components/reels-debug";
 import { formatViews, getInstagramReels } from "@/lib/instagram";
 import { site } from "@/lib/site";
 
@@ -39,12 +40,13 @@ export function ReelsFallback() {
 }
 
 export default async function Reels() {
-  const reels = await getInstagramReels();
+  const { reels, debug } = await getInstagramReels();
 
   return (
     <section className="py-14">
       <div className="container-site">
         <ReelsHeader />
+        <ReelsDebug info={debug} />
         {reels.length ? (
           <div className="no-scrollbar -mx-4 mt-5 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
             {reels.map((reel) => (
