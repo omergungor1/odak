@@ -108,7 +108,12 @@ export default function CorporatePage() {
               Kurumsal iletişim <ArrowRight className="size-4" />
             </a>
           </div>
-          <Photo label="Kurucu fotoğrafı" tone="light" className="aspect-[4/5] rounded-2xl" />
+          <Photo
+            src="/kurumsal/kurucu.webp"
+            label="Mert Yılmaz, Odak Oto Ekspertiz kurucusu"
+            sizes="(max-width: 768px) 100vw, 260px"
+            className="aspect-[4/5] rounded-2xl"
+          />
         </div>
       </section>
     </>
