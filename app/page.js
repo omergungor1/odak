@@ -4,6 +4,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import HeroSlider from "@/components/hero-slider";
 import DealerCarousel from "@/components/dealer-carousel";
+import HomeInspection from "@/components/home-inspection";
+import HomeReport from "@/components/home-report";
+import HomeTestimonials from "@/components/home-testimonials";
 import Reels, { ReelsFallback } from "@/components/reels";
 import { Faq, Process, WhyUs } from "@/components/sections";
 import { SectionHeading } from "@/components/ui";
@@ -21,6 +24,7 @@ export default function HomePage() {
         <Reels />
       </Suspense>
       <WhyUs className="pb-10 pt-16" />
+      <HomeInspection />
 
       <section className="container-site">
         <Link href="/paketler" className="card block overflow-hidden p-0 transition hover:shadow-float">
@@ -45,6 +49,8 @@ export default function HomePage() {
         </p>
       </section>
 
+      <HomeReport />
+
       <section className="py-20">
         <div className="container-site">
           <SectionHeading
@@ -63,6 +69,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeTestimonials />
 
       <Process />
 
