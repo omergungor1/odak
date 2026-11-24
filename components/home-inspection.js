@@ -109,7 +109,12 @@ export default function HomeInspection() {
           highlight="Neler Kontrol Ediyoruz?"
           description="Aracınızın kritik noktalarını modern cihazlarla detaylı şekilde inceliyor, tüm bulguları kapsamlı ekspertiz raporunda sunuyoruz."
         />
-        <Photo label="Kontrol görseli" tone="light" className="mt-8 aspect-[21/8] rounded-2xl" />
+        <Photo
+          label="Full ekspertiz kontrolleri"
+          src="/banners/kontrol-gorseli.webp"
+          className="mt-8 aspect-[21/8] rounded-2xl"
+          sizes="(max-width: 1150px) 100vw, 1110px"
+        />
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((item) => {
             const Icon = item.icon;

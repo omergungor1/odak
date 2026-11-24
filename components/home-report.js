@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Camera, ClipboardList, FileText, MonitorSmartphone } from "lucide-react";
+import { Camera, ClipboardList, FileText, MonitorSmartphone, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/brand-icons";
 import { Photo, SectionHeading } from "@/components/ui";
+import { site, whatsappUrl } from "@/lib/site";
 
 const tabs = [
   {
@@ -91,7 +93,12 @@ export default function HomeReport() {
               </span>
             </div>
             <div className="p-5">
-              <Photo label="Araç görseli" tone="light" className="aspect-[16/9] rounded-xl" />
+              <Photo
+                label="Temsili dijital ekspertiz raporu"
+                src="/banners/dijital-rapor.webp"
+                className="aspect-[16/9] rounded-xl"
+                sizes="(max-width: 1024px) 100vw, 560px"
+              />
               <p className="mt-3 text-sm font-semibold text-heading">Örnek araç · 2018 · 1.6</p>
               <p className="text-xs text-muted">Temsili bilgilerdir. Gerçek bir ekspertiz kaydı değildir.</p>
               <div className="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Temsili rapor sekmeleri">
@@ -147,14 +154,19 @@ export default function HomeReport() {
                 </div>
               );
             })}
-            <a
-              href="/banners/ornek-rapor.webp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-1 rounded-full"
-            >
-              Örnek Raporu İncele <ArrowRight className="size-4" />
-            </a>
+            <div className="mt-1 grid gap-2">
+              <a href={site.phoneHref} className="btn-primary rounded-full">
+                <Phone className="size-4" /> Detaylı bilgi al
+              </a>
+              <a
+                href={whatsappUrl("Merhaba, ekspertiz raporu hakkında detaylı bilgi almak istiyorum.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp rounded-full"
+              >
+                <WhatsAppIcon className="size-4" /> WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
